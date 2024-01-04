@@ -102,11 +102,13 @@ const UserAuthForm = ({ type }) => {
       <section className="h-cover flex items-center justify-center">
         <Toaster />
         <form
-          className="w-[80%] max-w-[400px] border border-grey p-10"
+          className="w-[80%] max-w-[400px] max-sm:border-none max-sm:p-0 border border-grey p-10"
           id="formElement"
         >
-          <h1 className="text-4xl font-gelasio capitalize text-center mb-24">
-            {type == "sign_in" ? "Welcome Back" : "Join Us Today"}
+          <h1 className="text-4xl font-gelasio capitalize text-center mb-20">
+            {type == "sign_in"
+              ? "Sign in to your account"
+              : "Create your account"}
           </h1>
 
           {

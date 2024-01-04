@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Gelasio&family=Inter:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Playfair+Display&display=swap");
 @import "@flaticon/flaticon-uicons/css/all/all";
 
 @tailwind base;
@@ -35,7 +36,7 @@
   }
 
   .navbar {
-    @apply z-10 sticky top-0 flex items-center gap-12 w-full px-[5vw] py-5 h-[80px] border-b border-grey bg-white;
+    @apply z-20 sticky top-0 flex items-center gap-12 w-full px-[5vw] py-5 h-[80px] border-b border-grey bg-white;
   }
 
   .h-cover {
@@ -121,6 +122,9 @@
 
   .blog-index {
     @apply text-4xl sm:text-3xl lg:text-5xl font-bold text-grey leading-none;
+  }
+  .logotitle {
+    @apply font-firaPlayfair text-3xl;
   }
 }
 

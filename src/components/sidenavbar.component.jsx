@@ -42,10 +42,10 @@ const SideNav = () => {
     <Navigate to="/signin" />
   ) : (
     <>
-      <section className="relative flex gap-10 py-0 m-0 max-md:flex-col">
+      <section className=" relative flex gap-10 py-0 m-0 max-md:flex-col">
         {/* sidebar */}
 
-        <div className="sticky top-[80px]">
+        <div className="sticky top-[80px] z-10">
           <div className="md:hidden bg-white py-1 border-b border-grey flex flex-nowrap overflow-x-auto">
             <button
               ref={dashboardNavIcon}

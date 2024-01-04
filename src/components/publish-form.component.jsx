@@ -46,7 +46,7 @@ const PublishForm = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.keyCode == 13 || e.keyCode == 188) {
+    if (e.keyCode == 13 || e.keyCode == 188 || e.type === "click") {
       // press enter
       e.preventDefault();
 
@@ -177,12 +177,14 @@ const PublishForm = () => {
 
           <div className="relative input-box pl-2 py-2 pb-4">
             <select
-              type="text" 
-              defaultValue="Topic"
+              defaultValue=""
               className="sticky input-box
               bg-white focus:bg-white top-0 left-0 pl-4 mb-3"
-              onKeyDown={handleKeyDown}
+              onClick={handleKeyDown}
             >
+              <option value="" disabled>
+                Choose a tags ...
+              </option>
               <option value="personal">Personal</option>
               <option value="programming">Programming</option>
               <option value="film making">Film Making</option>
@@ -195,6 +197,7 @@ const PublishForm = () => {
             {tags.map((tag, i) => (
               <Tag key={i} tag={tag} />
             ))}
+            {/* <p>Your favorite fruit: {selectedFruit}</p> */}
           </div>
           <p className="mt-1 mb-4 text-dark-grey text-right">
             {tagLimit - tags.length} Tags left
