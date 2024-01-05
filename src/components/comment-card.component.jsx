@@ -6,6 +6,7 @@ import { BlogPageContext } from "../pages/blog.page";
 import CommentField from "./comment-field.component";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import AnimationWrapper from "../common/page-animation";
 
 const CommentCard = ({ index, commentData, leftVal = 0 }) => {
   let {
