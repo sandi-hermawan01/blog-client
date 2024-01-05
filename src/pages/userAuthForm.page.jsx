@@ -164,25 +164,39 @@ const UserAuthForm = ({ type }) => {
           {
             // condition to check for whether to its a sign_in form or signup form
             type == "sign_in" ? (
-              <p className="mt-6 text-dark-grey text-xl text-center">
-                Don’t have an account ?
-                <Link
-                  className="underline text-black text-xl ml-1"
-                  to="/signup"
-                >
-                  Join us today
-                </Link>
-              </p>
+              <>
+                <p className="mt-6 text-dark-grey text-xl text-center">
+                  Don’t have an account ?
+                  <Link
+                    className="underline text-black text-xl ml-1"
+                    to="/signup"
+                  >
+                    Join us today
+                  </Link>
+                </p>
+                <p className="text-center mt-4 text-red underline">
+                  for now you can't login with google
+                  <br />
+                  Sorry about this unpleasant experience
+                </p>
+              </>
             ) : (
-              <p className="mt-6 text-dark-grey text-xl text-center">
-                Already a member ?
-                <Link
-                  className="underline text-black text-xl ml-1"
-                  to="/signin"
-                >
-                  Sign in here
-                </Link>
-              </p>
+              <>
+                <p className="mt-6 text-dark-grey text-xl text-center">
+                  Already a member ?
+                  <Link
+                    className="underline text-black text-xl ml-1"
+                    to="/signin"
+                  >
+                    Sign in here
+                  </Link>
+                </p>
+                <p className="text-center mt-4 text-red underline">
+                  for now you can't login with google
+                  <br />
+                  Sorry about this unpleasant experience
+                </p>
+              </>
             )
           }
         </form>
