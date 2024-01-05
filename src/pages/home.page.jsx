@@ -10,6 +10,8 @@ import axios from "axios";
 import Loader from "../components/loader.component";
 import MinimalBlogPost from "../components/nobanner-blog-post.component";
 import { filterPaginationData } from "../common/filter-pagination-data";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import LoadMoreDataBtn from "../components/load-more.component";
 import CarouselComponent from "../components/carousel.component";
 import wutheringDanjinMp4 from "../imgs/wuthering-danjin.mp4";
@@ -134,6 +136,7 @@ const HomePage = () => {
 
     setPageState(category);
   };
+
   return (
     <AnimationWrapper>
       <section className="h-cover flex justify-center gap-10">
@@ -187,7 +190,9 @@ const HomePage = () => {
                 <h1 className="font-medium text-xl mb-4">
                   Tags from all interests
                 </h1>
-                <div className="flex gap-3 flex-wrap">
+                <div
+                  className={`flex gap-3 flex-wrap text-center justify-center md:justify-normal`}
+                >
                   {categories.map((category, i) => {
                     return (
                       <button

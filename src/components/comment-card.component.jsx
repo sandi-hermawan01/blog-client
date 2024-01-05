@@ -206,64 +206,73 @@ const CommentCard = ({ index, commentData, leftVal = 0 }) => {
   };
 
   return (
-    <div className="w-full" style={{ paddingLeft: `${leftVal * 10}px` }}>
-      <div className="my-5 p-6 rounded-md border border-grey">
-        <div className="flex gap-3 items-center mb-8">
+    <div className="w-full" style={{ paddingLeft: `${leftVal * 7}px` }}>
+      <div className="mb-2 px-4 py-2  ">
+        <div className="flex gap-3 items-center mb-1">
           <img src={profile_img} className="w-6 h-6 rounded-full" />
-          <p className="line-clamp-1">
-            {fullname} @{profile_username}
+          <p className=" whitespace-nowrap text-[15px] font-medium">
+            {fullname}
           </p>
-          <p className=" min-w-fit">{getDay(commentedAt)}</p>
+          <p className="text-[14px] font-medium overflow-clip opacity-80">
+            @{profile_username}
+          </p>
+          <p className="min-w-fit">{getDay(commentedAt)}</p>
         </div>
-        <p className="font-gelasio text-xl ml-3">{comment}</p>
-
-        <div className="flex gap-5 items-center mt-5">
+        <p className="font-gelasio text-[14px] ml-[32px] rounded-xl bg-grey bg-opacity-50 py-1 pl-3.5">
+          {comment}
+        </p>
+        <div className="flex gap-5 items-center mt-[3px] ml-[32px]">
           {!commentsArr[index].isRepliesLoaded ? (
-            <button
-              onClick={loadReplies}
-              className="text-dark-grey p-2 px-3 hover:bg-grey/30 rounded-md flex items-center gap-2"
-            >
-              <i className="fi fi-rr-comment mt-1"></i> {children.length} Reply{" "}
-            </button>
+            <>
+              <button
+                onClick={loadReplies}
+                className="text-dark-grey p-[2px] px-3 hover:bg-grey/30 rounded-md flex items-center gap-2"
+              >
+                <i className="fi fi-rr-comment mt-1"></i> {children.length}{" "}
+                Reply{" "}
+              </button>
+            </>
           ) : (
-            <button
-              onClick={hideReplies}
-              className="text-dark-grey p-2 px-3 hover:bg-grey/30 rounded-md flex items-center gap-2"
-            >
-              <i className="fi fi-rr-comment mt-1"></i> Hide Reply{" "}
-            </button>
+            <>
+              <button
+                onClick={hideReplies}
+                className="text-dark-grey p-2 px-3 hover:bg-grey/30 rounded-md flex items-center gap-2"
+              >
+                <i className="fi fi-rr-comment mt-1"></i> Hide Reply{" "}
+              </button>
+            </>
           )}
-
           <button className="underline" onClick={handleReplyClick}>
             Reply
           </button>
-
           {username == profile_username || username == blog_author ? (
-            <button
-              className="p-2 px-3 rounded-md border border-grey ml-auto hover:bg-red/30 hover:text-red flex items-center"
-              onClick={deleteComment}
-            >
-              <i className="fi fi-rr-trash pointer-events-none"></i>
-            </button>
+            <>
+              <button
+                className="p-[3px] px-2 rounded-md border border-grey ml-auto hover:bg-red/30 hover:text-red flex items-center"
+                onClick={deleteComment}
+              >
+                <i className="fi fi-rr-trash pointer-events-none"></i>
+              </button>
+            </>
           ) : (
             ""
           )}
         </div>
-
         {isReplying ? (
-          <div className="mt-8">
-            <CommentField
-              action="Reply"
-              index={index}
-              replyingTo={_id}
-              setReplying={setReplying}
-            />
-          </div>
+          <>
+            <div className="mt-8">
+              <CommentField
+                action="Reply"
+                index={index}
+                replyingTo={_id}
+                setReplying={setReplying}
+              />
+            </div>
+          </>
         ) : (
           ""
         )}
       </div>
-
       <LoadMoreRepliesButton />
     </div>
   );

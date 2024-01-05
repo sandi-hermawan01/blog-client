@@ -47,8 +47,8 @@ export default function CarouselComponent({
             <div
               key={i}
               className={`
-              transition-all w-3 h-3 bg-dark-grey rounded-full
-              ${curr === i ? "p-2" : "bg-opacity-50"}
+              transition-all w-4 h-2 bg-dark-grey rounded-full border-[1px] border-white
+              ${curr === i ? "px-4" : "bg-opacity-50"}
             `}
             />
           ))}
