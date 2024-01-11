@@ -66,9 +66,9 @@ const App = () => {
           <Route path="blog/:blog_id" element={<BlogPage />} />
           <Route path="search/:query" element={<SearchPage />} />
           <Route path="*" element={<PageNotFound />} />
-          <Analytics />
         </Route>
       </Routes>
+      <Analytics />
     </UserContext.Provider>
   );
 };
