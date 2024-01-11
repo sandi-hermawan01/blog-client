@@ -19,6 +19,7 @@ import Notifications from "./pages/notifications.page";
 import AdminPage from "./pages/admin.page";
 import AdminManageBlogs from "./pages/admin-blog-manager.page";
 import AdminDashboard from "./pages/admin-dashboard.page";
+import { Analytics } from "@vercel/analytics/react";
 // Context
 
 export const UserContext = createContext({}); // user information state
@@ -65,6 +66,7 @@ const App = () => {
           <Route path="blog/:blog_id" element={<BlogPage />} />
           <Route path="search/:query" element={<SearchPage />} />
           <Route path="*" element={<PageNotFound />} />
+          <Analytics />
         </Route>
       </Routes>
     </UserContext.Provider>
